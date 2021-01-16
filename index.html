@@ -4,12 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Weather API</title>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <h1 class="text-center bg-dark">Weather Dashboard</h1>
+    </header>
+
     
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left side -->
+            <div class="col-4 bg-light">
+                <!-- Search Bar -->
+                <div>
+                    <h4 class="">Search for a City:</h4>
+                    <input class="" type="text">
+                </div>
+                <br>
+                <!-- Search History -->
+                <div>
+                    <h4>Search History:</h4>
+                    <p>Houston</p>
+                    <p>Dallas</p>
+                    <p>San Antonio</p>
+                </div>
+            </div>
+            <!-- Right side -->
+            <div class="col-8">
+                <!-- City Dashboard -->
+                <div class="border">
+                    <h3 id="city" class="ml-1">Houston (1/16/2021)</h3>
+                    <p id="temp" class="ml-1">Temperature: </p>
+                    <p id="humid" class="ml-1">Humidity: </p>
+                    <p id="wind" class="ml-1">Wind Speed: </p>
+                    <p id="uv" class="ml-1">UV Index: </p>
+                </div>
+                <br>
+                <!-- 5-Day Forecast -->
+                <div>
+                    <h3>5-Day Forecast:</h3>
+                    <div class="card-deck">
+                        <div id="dayOne" class="card bg-primary text-white">
+                            <div class="card-body">
+                              <h5 class="card-title">1/17/2021</h5>
+                              <img src="">
+                              <br>
+                              <p class="card-text">Temp: </p>
+                              <p class="card-text">Humidity: </p>
+                            </div>
+                        </div>
+                        <div id="dayTwo" class="card bg-primary text-white">
+                            <div class="card-body">
+                              <h5 class="card-title">1/18/2021</h5>
+                              <img src="">
+                              <br>
+                              <p class="card-text">Temp: </p>
+                              <p class="card-text">Humidity: </p>
+                            </div>
+                        </div>
+                        <div id="dayThree" class="card bg-primary text-white">
+                            <div class="card-body">
+                              <h5 class="card-title">1/19/2021</h5>
+                              <img src="">
+                              <br>
+                              <p class="card-text">Temp: </p>
+                              <p class="card-text">Humidity: </p>
+                        </div>
+                        </div>
+                        <div id="dayFour" class="card bg-primary text-white">
+                            <div class="card-body">
+                              <h5 class="card-title">1/20/2021</h5>
+                              <img src="">
+                              <br>
+                              <p class="card-text">Temp: </p>
+                              <p class="card-text">Humidity: </p>
+                            </div>
+                        </div>
+                        <div id="dayFive" class="card bg-primary text-white">
+                            <div class="card-body">
+                              <h5 class="card-title">1/21/2021</h5>
+                              <img src="">
+                              <br>
+                              <p class="card-text">Temp: </p>
+                              <p class="card-text">Humidity: </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="./assets/js/script.js"></script>
