@@ -125,7 +125,7 @@ $("#search").click(function(){
     // empty out current forecast cards displayed
     $("#forecast").empty();
     $("#cityInput").val("");
-    forecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
+    forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
     getForecast();
     // adding recent searches to search history
     var historyContainer = document.querySelector('#searchHistory');
@@ -145,6 +145,6 @@ $("#searchHistory").on('click', '.history-btn', function(){
     cityLocation = this.textContent;
     $("#forecast").empty();
     $("#cityInput").val("");
-    forecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
+    forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
     getForecast();
 });
