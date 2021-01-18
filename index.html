@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Weather API</title>
 </head>
 <body>
@@ -18,82 +18,36 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Left side -->
-            <div class="col-4 bg-light">
+            <div class="col-2 bg-light">
                 <!-- Search Bar -->
                 <div>
                     <h4 class="">Search for a City:</h4>
-                    <input class="" type="text">
-                    <button type="button" class="btn btn-md btn-outline-primary"><img id="searchIcon" src="./assets/images/open-iconic-master/svg/magnifying-glass.svg"></button>
+                    <input id="cityInput" class="" type="text">
+                    <button id="search" type="button" class="btn btn-md btn-outline-primary"><img id="searchIcon" src="./assets/images/open-iconic-master/svg/magnifying-glass.svg"></button>
                 </div>
                 <br>
                 <!-- Search History -->
-                <div>
+                <div id="searchHistory">
                     <h4>Search History:</h4>
-                    <button type="button" class="btn btn-lg btn-outline-primary col-6 mb-2">Houston</button>
-                    <button type="button" class="btn btn-lg btn-outline-primary col-6 mb-2">Dallas</button>
-                    <button type="button" class="btn btn-lg btn-outline-primary col-6 mb-2">San Antonio</button>
+                    
                 </div>
             </div>
             <!-- Right side -->
-            <div class="col-8">
+            <div class="col-10">
                 <!-- City Dashboard -->
                 <div class="border">
-                    <h3 id="city" class="ml-1">Houston (1/16/2021) ☀️</h3>
-                    <p id="temp" class="ml-1">Temperature: </p>
-                    <p id="humid" class="ml-1">Humidity: </p>
-                    <p id="wind" class="ml-1">Wind Speed: </p>
-                    <p id="uv" class="ml-1">UV Index: </p>
+                    <h3 id="city" class="ml-1">City</h3>
+                    <p id="temp" class="ml-1">Temperature</p>
+                    <p id="humid" class="ml-1">Humidity</p>
+                    <p id="wind" class="ml-1">Wind Speed</p>
+                    <p id="uv" class="ml-1">UV Index</p>
                 </div>
                 <br>
                 <!-- 5-Day Forecast -->
                 <div>
                     <h3>5-Day Forecast:</h3>
-                    <div class="card-deck">
-                        <div id="dayOne" class="card bg-primary text-white">
-                            <div class="card-body">
-                              <h5 class="card-title">1/17/2021</h5>
-                              <img src="">
-                              <br>
-                              <p class="card-text">Temp: </p>
-                              <p class="card-text">Humidity: </p>
-                            </div>
-                        </div>
-                        <div id="dayTwo" class="card bg-primary text-white">
-                            <div class="card-body">
-                              <h5 class="card-title">1/18/2021</h5>
-                              <img src="">
-                              <br>
-                              <p class="card-text">Temp: </p>
-                              <p class="card-text">Humidity: </p>
-                            </div>
-                        </div>
-                        <div id="dayThree" class="card bg-primary text-white">
-                            <div class="card-body">
-                              <h5 class="card-title">1/19/2021</h5>
-                              <img src="">
-                              <br>
-                              <p class="card-text">Temp: </p>
-                              <p class="card-text">Humidity: </p>
-                        </div>
-                        </div>
-                        <div id="dayFour" class="card bg-primary text-white">
-                            <div class="card-body">
-                              <h5 class="card-title">1/20/2021</h5>
-                              <img src="">
-                              <br>
-                              <p class="card-text">Temp: </p>
-                              <p class="card-text">Humidity: </p>
-                            </div>
-                        </div>
-                        <div id="dayFive" class="card bg-primary text-white">
-                            <div class="card-body">
-                              <h5 class="card-title">1/21/2021</h5>
-                              <img src="">
-                              <br>
-                              <p class="card-text">Temp: </p>
-                              <p class="card-text">Humidity: </p>
-                            </div>
-                        </div>
+                    <div id="forecast" class="card-deck">
+                        
                     </div>
                 </div>
             </div>
