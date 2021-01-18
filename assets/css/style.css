@@ -8,3 +8,7 @@ header h1 {
     padding-bottom: 4px;
     fill: #ffffff;
 }
+
+footer h5 {
+    color: white;
+}

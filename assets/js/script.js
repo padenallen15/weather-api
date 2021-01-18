@@ -10,14 +10,19 @@ var lon = "";
 var temp = "";
 var windSpeed = "";
 var humidity = "";
-var cityLocation = "Houston";
+var cityLocation = "";
 var nowDate = new Date();
 var currentDate = nowDate.getMonth()+1+"/"+nowDate.getDate()+"/"+nowDate.getFullYear();
 
+// returns 5-day forecast
 function getForecast() {
 fetch(forecast)
     .then(function(response) {
-        return response.json();
+        if (response.ok){
+            return response.json();
+        } else {
+            alert("ERROR: CITY NOT FOUND");
+        }
     })
     .then(function(response) {
         // getting latitude and longitude for second API call
@@ -30,7 +35,7 @@ fetch(forecast)
             temp = response.list[i].main.temp;
             humidity = response.list[i].main.humidity;
             
-            // getting date of forecast
+            // getting dates of the 5 days
             var split = response.list[i].dt_txt.split(" ");
             var split2 = split[0].split("-");
             var month = split2[1];
@@ -79,6 +84,7 @@ fetch(forecast)
             card.appendChild(cardBody);
             forecastContainer.appendChild(card);
 
+            // i + 8 because the API returns weather forecast for every 3 hours. In order to get to the next day we need to get data from the i+8 element
             i = i + 8;
         }
         // API call for current weather
@@ -102,6 +108,7 @@ fetch(forecast)
                 } else{
                     weather = clear;
                 }
+                // inputting info for selected city, current temp, humidity, wind speed, uv
                 $("#city").text(cityLocation + " (" + currentDate + ") " + weather + " " + response.current.weather[0].main);
                 $("#temp").text("Temperature: " + response.current.temp + " °F");
                 $("#humid").text("Humidity: " + response.current.humidity + "%");
@@ -111,13 +118,16 @@ fetch(forecast)
     }); 
 };
 
+// when search button is clicked
 $("#search").click(function(){
     cityLocation = $("#cityInput").val();
     if (cityLocation.length !== 0) {
+    // empty out current forecast cards displayed
     $("#forecast").empty();
     $("#cityInput").val("");
     forecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
     getForecast();
+    // adding recent searches to search history
     var historyContainer = document.querySelector('#searchHistory');
     var historyBtn = document.createElement('button');
     historyBtn.type = "button";
@@ -130,6 +140,7 @@ $("#search").click(function(){
     }
 });
 
+// when a search history button is clicked
 $("#searchHistory").on('click', '.history-btn', function(){
     cityLocation = this.textContent;
     $("#forecast").empty();
