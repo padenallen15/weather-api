@@ -28,7 +28,7 @@ fetch(forecast)
         // getting latitude and longitude for second API call
         lat = response.city.coord.lat;
         lon = response.city.coord.lon;
-        var currentWeather = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,daily,alerts&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
+        var currentWeather = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,daily,alerts&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
 
         for (var i=0; i < 33;) {
             // getting temp, humidity, weather conditions for 5 day forecast
@@ -125,7 +125,7 @@ $("#search").click(function(){
     // empty out current forecast cards displayed
     $("#forecast").empty();
     $("#cityInput").val("");
-    forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
+    forecast = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
     getForecast();
     // adding recent searches to search history
     var historyContainer = document.querySelector('#searchHistory');
@@ -145,6 +145,6 @@ $("#searchHistory").on('click', '.history-btn', function(){
     cityLocation = this.textContent;
     $("#forecast").empty();
     $("#cityInput").val("");
-    forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
+    forecast = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&units=imperial&appid=4ebfcb0b916a3013296b904d6e4259ba";
     getForecast();
 });
